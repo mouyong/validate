@@ -35,7 +35,7 @@ $data = [
 
 
 /** @var \Illuminate\Contracts\Validation\Validator|\Illuminate\Contracts\Validation\Factory $validator */
-$validator = validate($data, [
+$validator = validator($data, [
     'name'  => 'require|max:25',
     'age'   => 'require|number|between:1,120',
     'email' => 'require|email'
