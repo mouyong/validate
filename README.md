@@ -2,7 +2,7 @@
 
 ## 安装
 
-`composer require mouyong/validate`
+`composer require mouyong/validate -vvv`
 
 ## 文件翻译创建
 
