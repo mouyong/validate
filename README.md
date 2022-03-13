@@ -1,4 +1,4 @@
-<p style="text-align: center;"> 基于 illuminate/validate，在 laravel 框架外使用的 validate </p>
+# <p style="text-align: center;"> 基于 illuminate/validate，在 laravel 框架外使用的 validate </p>
 
 ## 安装
 
