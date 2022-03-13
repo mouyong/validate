@@ -1,4 +1,5 @@
 <?php
+
 namespace Mouyong\Validate;
 
 class Install
