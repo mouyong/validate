@@ -1,0 +1,17 @@
+{
+  "name": "mouyong/validate",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "workerman/webman-framework": "^1.2.1",
+    "illuminate/validation": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mouyong\\Validate\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  }
+}
