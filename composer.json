@@ -1,30 +1,37 @@
 {
-  "name": "mouyong/validate",
-  "type": "library",
-  "description": "Based on illuminate/validate, validate is used outside the laravel framework",
-  "license": "MIT",
-  "keywords": ["validate", "mouyong validate", "webman", "webman validate", "laravel validate", "validator"],
-  "support": {
-     "issues": "https://github.com/mouyong/validate/issues",
-     "source": "https://github.com/mouyong/validate"
-  },
-  "authors": {
-     {
-       "name": "mouyong",
-       "email": "my24251325@gmail.com",
-       "homepage": "https://github.com/mouyong",
-       "role": "Creator"
-     }
-  },
-  "require": {
-    "illuminate/validation": "^9.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Mouyong\\Validate\\": "src"
+    "name": "mouyong/validate",
+    "type": "library",
+    "description": "Based on illuminate/validate, validate is used outside the laravel framework",
+    "license": "MIT",
+    "keywords": [
+        "validate",
+        "mouyong validate",
+        "webman",
+        "webman validate",
+        "laravel validate",
+        "validator"
+    ],
+    "support": {
+        "issues": "https://github.com/mouyong/validate/issues",
+        "source": "https://github.com/mouyong/validate"
     },
-    "files": [
-      "src/helpers.php"
-    ]
-  }
+    "authors": [
+        {
+            "name": "mouyong",
+            "email": "my24251325@gmail.com",
+            "homepage": "https://github.com/mouyong",
+            "role": "Creator"
+        }
+    ],
+    "require": {
+        "illuminate/validation": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mouyong\\Validate\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
 }
