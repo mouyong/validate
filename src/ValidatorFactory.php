@@ -26,8 +26,15 @@ class ValidatorFactory
     public function __construct(?string $langPath = null)
     {
         $this->setLangPath($langPath);
+    }
 
-        $this->factory = new Factory($this->loadTranslator());
+    public function getFactory()
+    {
+        if (is_null($this->factory)) {
+            $this->factory = new Factory($this->loadTranslator());
+        }
+
+        return $this->factory;
     }
 
     public function setLangPath(?string $langPath = null)
@@ -45,7 +52,6 @@ class ValidatorFactory
         else if (is_null($this->langPath) && class_exists(\Illuminate\Foundation\Application::class)) {
             $this->langPath = base_path() . '/resources/lang';
         }
-
         return $this->langPath;
     }
 
@@ -63,6 +69,7 @@ class ValidatorFactory
 
     public function __call(string $method, array $args)
     {
-        return call_user_func_array([$this->factory, $method], $args);
+
+        return call_user_func_array([$this->getFactory(), $method], $args);
     }
 }
