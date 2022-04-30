@@ -10,7 +10,7 @@ class Install
      * @var array
      */
     protected static $pathRelation = array(
-        'lang' => 'lang',
+        'lang' => 'resource/translations',
     );
 
     /**
