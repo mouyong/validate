@@ -37,9 +37,12 @@ class ValidatorFactory
 
     public function getLangPath()
     {
+        // webman
         if (is_null($this->langPath) && !class_exists(\Illuminate\Foundation\Application::class)) {
             $this->langPath = base_path() . '/resource/translations';
-        } else if (is_null($this->langPath) && class_exists(\Illuminate\Foundation\Application::class)) {
+        } 
+        // laravel
+        else if (is_null($this->langPath) && class_exists(\Illuminate\Foundation\Application::class)) {
             $this->langPath = base_path() . '/resources/lang';
         }
 
