@@ -27,7 +27,7 @@ class ValidatorFactory
 
     protected function loadTranslator(): Translator
     {
-        $langPath = base_path() . '/lang';
+        $langPath = base_path() . '/resource/translations';
 
         $filesystem = new Filesystem();
         $loader = new Translation\FileLoader($filesystem, $langPath);
