@@ -62,9 +62,19 @@ class ValidatorFactory
         $filesystem = new Filesystem();
         $loader = new Translation\FileLoader($filesystem, $langPath);
         $loader->addNamespace('lang', $langPath);
-        $loader->load('en', 'validation', 'lang');
 
-        return new Translator($loader, 'en');
+        // webman
+        if (is_null($this->langPath) && !class_exists(\Illuminate\Foundation\Application::class)) {
+           $currentLanguage = config('translation.locale');
+        } 
+        // laravel
+        else if (is_null($this->langPath) && class_exists(\Illuminate\Foundation\Application::class)) {
+            $currentLanguage = config('app.locale');
+        }
+
+        $loader->load($currentLanguage, 'validation', 'lang');
+
+        return new Translator($loader, $$currentLanguage);
     }
 
     public function __call(string $method, array $args)
