@@ -1,4 +1,4 @@
-# 基于 illuminate/validate，在 laravel 框架外使用的 validate
+# 在 laravel 框架外使用的 illuminate/validate
 
 ## 安装
 
