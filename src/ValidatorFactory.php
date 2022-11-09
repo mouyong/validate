@@ -17,7 +17,7 @@ use Illuminate\Translation\Translator;
 class ValidatorFactory
 {
     protected $langPath;
-    
+
     /**
      * @var Factory
      */
@@ -47,7 +47,7 @@ class ValidatorFactory
         // webman
         if (is_null($this->langPath) && !class_exists(\Illuminate\Foundation\Application::class)) {
             $this->langPath = base_path() . '/resource/translations';
-        } 
+        }
         // laravel
         else if (is_null($this->langPath) && class_exists(\Illuminate\Foundation\Application::class)) {
             $this->langPath = base_path() . '/resources/lang';
@@ -63,10 +63,12 @@ class ValidatorFactory
         $loader = new Translation\FileLoader($filesystem, $langPath);
         $loader->addNamespace('lang', $langPath);
 
+        $currentLanguage = 'en';
+
         // webman
         if (is_null($this->langPath) && !class_exists(\Illuminate\Foundation\Application::class)) {
-           $currentLanguage = config('translation.locale');
-        } 
+            $currentLanguage = config('translation.locale');
+        }
         // laravel
         else if (is_null($this->langPath) && class_exists(\Illuminate\Foundation\Application::class)) {
             $currentLanguage = config('app.locale');
@@ -74,7 +76,7 @@ class ValidatorFactory
 
         $loader->load($currentLanguage, 'validation', 'lang');
 
-        return new Translator($loader, $$currentLanguage);
+        return new Translator($loader, $currentLanguage);
     }
 
     public function __call(string $method, array $args)
